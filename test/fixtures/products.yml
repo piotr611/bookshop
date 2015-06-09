@@ -6,6 +6,24 @@ true_data:
   image_url: MyString.jpg
   price: 9.99
 
+true_data_1:
+  title: MyString1234
+  description: MyText
+  image_url: MyString.jpg
+  price: 9.99
+
+true_data_2:
+  title: MyString1
+  description: MyText
+  image_url: MyString.jpg
+  price: 9.99
+
+true_data_3:
+  title: MyString2
+  description: MyText
+  image_url: MyString.jpg
+  price: 9.99
+
 false_title_only_2_symbols:
   title: My
   description: MyText
