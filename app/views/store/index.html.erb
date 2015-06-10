@@ -1,5 +1,10 @@
+<% if notice %>
+	<p id='notice'><%= notice %></p>
+<% end %>
+
 <h1>Our products</h1>
 <p>Count to Store#index = <%= @counter %></p>
+
 <% @products.each do |product| %>		
 	<div class='entry'>
 		<%= image_tag product.image_url %>
