@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+	has_many :line_items
+	before_destroy :ensure_not_referenced_by_any_line_item
+
 	validates :title, :description, :price, presence: true
 	validates :price, numericality: {greater_than_or_equal_to: 0.01}
 	validates :title, uniqueness: true, length: {minimum: 3}
@@ -8,4 +11,15 @@ class Product < ActiveRecord::Base
 		Product.order(:update_at).last
 	end	
 
+	private
+
+	#connecting method
+	def ensure_not_referenced_by_any_line_item
+		if line_items.empty?
+			return true
+		else
+			errors.add(:base, 'you have line_items with the product')
+			return false
+		end
+	end
 end
